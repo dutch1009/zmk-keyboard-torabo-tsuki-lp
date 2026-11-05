@@ -37,6 +37,8 @@
         triggers-per-rotation = <20>;
     };
 
+#if !defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL_PERIPHERAL)
+    /* Behavior input listeners run on central only. */
     hires_dial_scroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_scroll>;
@@ -46,6 +48,7 @@
         compatible = "zmk,input-listener";
         device = <&hires_dial_hscroll>;
     };
+#endif
 };
 
 &physical_layout_s {
