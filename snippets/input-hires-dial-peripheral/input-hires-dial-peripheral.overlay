@@ -1,0 +1,4 @@
+/* Physical HIRES_DIAL hardware is connected to the split peripheral. */
+#define TORABO_TSUKI_LP_INPUT_HIRES_DIAL_PERIPHERAL
+
+#include "../input-hires-dial/input-hires-dial.overlay"
