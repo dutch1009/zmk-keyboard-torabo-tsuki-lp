@@ -1,0 +1,9 @@
+/ {
+    behaviors {
+        hires_dial_scroll_inverted: hires_dial_scroll_inverted {
+            compatible = "zmk,behavior-hires-dial-scroll-inverted";
+            #sensor-binding-cells = <2>;
+            input-code = <INPUT_REL_WHEEL>;
+        };
+    };
+};
