@@ -1,4 +1,5 @@
-/ {
+/
+{
     /* Split HIRES events use sensor index 0; this device never emits local events. */
     split_hires_dial_sensor: split_hires_dial_sensor {
         compatible = "sekigon,remote-hires-dial";
@@ -8,7 +9,7 @@
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&split_hires_dial_sensor>;
-        triggers-per-rotation = <10>;
+        triggers-per-rotation = <5>;
     };
 
     hires_dial_scroll_listener {
