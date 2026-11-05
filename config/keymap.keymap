@@ -17,6 +17,20 @@
             key-positions = <28 29>;
             layers = <2>;
         };
+
+        /* Layer 0: J + K switches to Japanese kana input. */
+        combo_kana {
+            bindings = <&kp LANGUAGE_1>;
+            key-positions = <33 34>;
+            layers = <0>;
+        };
+
+        /* Layer 0: D + F switches to alphanumeric input. */
+        combo_eisu {
+            bindings = <&kp LANGUAGE_2>;
+            key-positions = <27 28>;
+            layers = <0>;
+        };
     };
 
     keymap {
