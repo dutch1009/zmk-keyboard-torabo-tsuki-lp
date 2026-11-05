@@ -77,6 +77,7 @@
         reg = <0x75>;
         res-cpi = <1275>;
         counts-per-revolution = <1275>;
+        invert;
         motion-read-interval-ms = <8>;
         motion-gpios = <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         power-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H0H1)>;
