@@ -100,3 +100,7 @@
 &hires_dial_radial_controller {
     sensor = <&hires_dial>;
 };
+
+&hires_dial_scroll_inverted {
+    sensor = <&hires_dial>;
+};
