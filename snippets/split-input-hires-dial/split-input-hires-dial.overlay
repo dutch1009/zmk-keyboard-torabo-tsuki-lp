@@ -38,3 +38,7 @@
 &hires_dial_radial_controller {
     sensor = <&split_hires_dial_sensor>;
 };
+
+&hires_dial_scroll_inverted {
+    sensor = <&split_hires_dial_sensor>;
+};
