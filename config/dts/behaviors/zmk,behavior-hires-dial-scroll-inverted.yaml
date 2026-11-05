@@ -1,0 +1,23 @@
+# Copyright (c) 2026 OpenAI
+# SPDX-License-Identifier: MIT
+
+description: Inverted scaled high-resolution dial wheel behavior
+
+compatible: "zmk,behavior-hires-dial-scroll-inverted"
+
+properties:
+  "#sensor-binding-cells":
+    type: int
+    required: true
+    const: 2
+  sensor:
+    type: phandle
+    required: true
+    description: High-resolution dial sensor providing counts-per-revolution.
+  input-code:
+    type: int
+    required: true
+
+sensor-binding-cells:
+  - param1
+  - param2
