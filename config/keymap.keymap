@@ -7,9 +7,21 @@
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 #include <behaviors/hires_dial.dtsi>
 #include <behaviors/hires_dial_scroll_inverted.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
 #endif
 
 / {
+    behaviors {
+        /* Runtime-editable dial direction/actions in DYA Studio. */
+        rsr_dial_scroll: rsr_dial_scroll {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&msc SCRL_DOWN>;
+            ccw-binding = <&msc SCRL_UP>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -87,11 +99,11 @@
 
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 &{/keymap/layer_0} {
-    sensor-bindings = <&hires_dial_scroll_inverted 10 1>;
+    sensor-bindings = <&rsr_dial_scroll>;
 };
 
 &{/keymap/layer_1} {
-    sensor-bindings = <&hires_dial_scroll_inverted 10 1>;
+    sensor-bindings = <&rsr_dial_scroll>;
 };
 
 &{/keymap/layer_2} {
