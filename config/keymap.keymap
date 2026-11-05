@@ -6,6 +6,7 @@
 
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 #include <behaviors/hires_dial.dtsi>
+#include <behaviors/hires_dial_scroll_inverted.dtsi>
 #endif
 
 / {
@@ -86,11 +87,11 @@
 
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 &{/keymap/layer_0} {
-    sensor-bindings = <&hires_dial_scroll 1 1>;
+    sensor-bindings = <&hires_dial_scroll_inverted 10 1>;
 };
 
 &{/keymap/layer_1} {
-    sensor-bindings = <&hires_dial_scroll 10 1>;
+    sensor-bindings = <&hires_dial_scroll_inverted 10 1>;
 };
 
 &{/keymap/layer_2} {
