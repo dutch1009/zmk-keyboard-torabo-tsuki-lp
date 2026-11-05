@@ -90,7 +90,7 @@
 };
 
 &{/keymap/layer_1} {
-    sensor-bindings = <&hires_dial_scroll 10 1>;
+    sensor-bindings = <&hires_dial_scroll 1 1>;
 };
 
 &{/keymap/layer_2} {
