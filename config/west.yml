@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/sekigon-gonnoc
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: dutch1009
+      url-base: https://github.com/dutch1009
   projects:
     - name: zmk
       remote: cormoran
@@ -32,7 +34,8 @@ manifest:
     - name: zmk-driver-kscan-4-direction-switch
       remote: sekigon-gonnoc
     - name: zmk-driver-hires-dial
-      remote: sekigon-gonnoc
+      remote: dutch1009
+      revision: chatgpt-reverse-scroll-layers-0-1
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
