@@ -1,8 +1,8 @@
-# Work around Zephyr 4.1's Nanopb CMake feature detection when Nanopb
-# is included from an external module before the C standard features are
-# propagated to module scope.
-if(DEFINED compile_features_c11)
-  list(APPEND CMAKE_C_COMPILE_FEATURES ${compile_features_c11})
+# Zephyr's ARM GNU toolchain may omit the C11 feature from its feature list
+# even though the bundled GCC 12.2 compiler supports it. Nanopb's FindNanopb.cmake
+# requires this feature when the runtime sensor-rotate Studio RPC module is enabled.
+if(NOT "c_std_11" IN_LIST CMAKE_C_COMPILE_FEATURES)
+  list(APPEND CMAKE_C_COMPILE_FEATURES c_std_11)
 endif()
 
 if(CONFIG_SHIELD_TORABO_TSUKI_LP_LEFT OR CONFIG_SHIELD_TORABO_TSUKI_LP_RIGHT)
