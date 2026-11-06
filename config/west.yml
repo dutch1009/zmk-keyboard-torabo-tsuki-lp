@@ -18,6 +18,9 @@ manifest:
       remote: cormoran
       revision: main
       import: true
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: 57738cc4fc6ba80e82a7ac57741a0339cb186cd4
     - name: zmk-component-bmp-boost
       remote: sekigon-gonnoc
       import: west.yml
