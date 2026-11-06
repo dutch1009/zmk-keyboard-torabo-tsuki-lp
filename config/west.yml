@@ -40,6 +40,6 @@ manifest:
       remote: sekigon-gonnoc
     - name: zmk-driver-hires-dial
       remote: dutch1009
-      revision: chatgpt-reverse-scroll-layers-0-1
+      revision: cb21e5ef6cd121e6fe3a6300ea3be280ca775a84
   self:
     path: config
