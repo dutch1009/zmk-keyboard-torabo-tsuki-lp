@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: dutch1009
+      url-base: https://github.com/dutch1009
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -30,6 +32,7 @@ manifest:
     - name: zmk-driver-kscan-4-direction-switch
       remote: sekigon-gonnoc
     - name: zmk-driver-hires-dial
-      remote: sekigon-gonnoc
+      remote: dutch1009
+      revision: master
   self:
     path: config
