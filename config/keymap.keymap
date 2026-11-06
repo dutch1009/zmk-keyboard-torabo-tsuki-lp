@@ -9,27 +9,33 @@
 #endif
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    runtime_combo_defaults {
+        compatible = "cormoran,runtime-combo-defaults";
 
         bt_clear {
+            slot = <0>;
             bindings = <&bt BT_CLR>;
             key-positions = <28 29>;
             layers = <2>;
+            display-name = "BT Clear";
         };
 
         /* Layer 0: J + K switches to Japanese kana input. */
         combo_kana {
+            slot = <1>;
             bindings = <&kp LANGUAGE_1>;
             key-positions = <33 34>;
             layers = <0>;
+            display-name = "Kana";
         };
 
         /* Layer 0: D + F switches to alphanumeric input. */
         combo_eisu {
+            slot = <2>;
             bindings = <&kp LANGUAGE_2>;
             key-positions = <27 28>;
             layers = <0>;
+            display-name = "Eisu";
         };
     };
 
