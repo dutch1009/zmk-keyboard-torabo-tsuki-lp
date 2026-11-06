@@ -237,7 +237,7 @@ static struct bt_conn_cb power_mgmt_bt_conn_callbacks = {
     .disconnected = power_mgmt_bt_conn_disconnected_cb,
 };
 
-static void mouse_input_callback(const struct device *dev, struct input_event *evt, void *user_data) {
+static void mouse_input_callback(struct input_event *evt, void *user_data) {
     reset_idle_timer();
 }
 
