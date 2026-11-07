@@ -39,61 +39,75 @@
         };
     };
 
-        keymap {
-            compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
         layer_0 {
             status = "okay";
             bindings = <
-                &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &kp S
-                &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp MINUS  &mt LSHFT Z  &kp X  &kp C  &kp V
-                &kp B  &kp LANGUAGE_2  &kp LANGUAGE_1  &kp N  &kp M  &kp COMMA  &kp DOT  &kp SEMI  &kp LCTRL  &kp LGUI  &kp LALT  &kp BSPC
-                &lt 3 SPACE  &lt 2 SPACE  &lt 1 RET  &kp BSPC  &kp BSPC  &kp RALT  &kp FSLH  &kp SQT  &mkp MCLK  &kp ESC  &kp N1  &kp N2
-                &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC  &kp TAB  &kp BSPC  &kp CAPS
-                &kp SQT  &kp LSHFT  &kp RSHFT  &kp LCTRL  &kp RCTRL  &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)\n                &mkp MCLK\n#endif
+&kp ESC    &kp N1     &kp N2    &kp N3    &kp N4    &kp N5                                                         &kp N6       &kp N7    &kp N8     &kp N9    &kp N0                &kp BSPC
+&kp TAB    &kp Q      &kp W     &kp E     &kp R     &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &kp BSPC
+&kp CAPS   &kp A      &kp S     &kp D     &kp F     &kp G        &mkp LCLK                  &mkp RCLK              &kp H        &kp J     &kp K      &kp L     &kp SEMI              &kp SQT
+&kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp SPACE                  &kp RET                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &kp RSHFT
+&kp LCTRL  &kp LCTRL  &kp LGUI  &kp LALT  &kp BSPC  &lt 2 SPACE  &mt LEFT_SHIFT LANGUAGE_1  &mt RSHIFT LANGUAGE_2  &lt 3 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &kp RCTRL
+#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
+&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+&mkp MCLK
+#endif
             >;
         };
 
         layer_1 {
             status = "okay";
             bindings = <
-                &kp ESC  &kp N1  &kp N2  &kp N3  &kp KP_ADD  &kp KP_MULTIPLY  &kp F1  &kp F2  &kp F3  &kp F4  &kp TAB  &kp N4
-                &kp N5  &kp N6  &kp KP_SUBTRACT  &kp KP_DIVIDE  &kp F5  &kp F6  &kp F7  &kp F8  &kp CAPS  &kp N7  &kp N8  &kp N9
-                &kp 34013229  &trans  &trans  &kp 34013218  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &kp N0  &trans
-                &trans  &kp LSHFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)\n                &mkp MCLK\n#endif
+&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
+#if defined(TORABO_TSUKI_LP_KEYSCAN_4_DIRECTION_SWITCH)
+&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+&mkp MCLK
+#endif
+&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
             >;
         };
 
         layer_2 {
             status = "okay";
             bindings = <
-                &kp 34013214  &kp 34013240  &kp 34013216  &kp 34013217  &kp 34013219  &kp 34013221  &kp RBKT  &kp NON_US_HASH  &kp 34013222  &kp 34013230  &kp 34013227  &kp 34013215
-                &kp 34013220  &kp 34013231  &kp 34013240  &kp 34013232  &kp 34013234  &kp MINUS  &kp LBKT  &kp SEMI  &kp LSHFT  &trans  &kp 34013233  &trans
-                &trans  &trans  &trans  &kp 34013238  &kp 34013239  &kp FSLH  &kp KP_EQUAL  &kp SQT  &trans  &trans  &trans  &trans
-                &trans  &trans  &kp LSHFT  &kp TAB  &kp DEL  &trans  &trans  &trans  &kp C_MUTE  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)\n                &kp C_MUTE\n#endif
+&trans  &trans            &trans            &trans      &trans      &trans                      &trans          &trans         &trans            &trans             &trans         &trans
+&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6)      &kp LS(N7)     &kp LS(N8)        &kp LS(N9)         &kp LS(N0)     &trans
+&trans  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans  &kp LEFT_BRACE  &kp MINUS      &kp EQUAL         &kp RIGHT_BRACE    &kp COLON      &trans
+&trans  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans  &kp LS(MINUS)   &kp LS(EQUAL)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
+&trans  &trans            &trans            &trans      &trans      &trans      &trans  &trans  &kp TAB         &kp DEL        &trans            &trans             &trans         &trans
+#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
+&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+&kp C_MUTE
+#endif
             >;
         };
 
         layer_3 {
             status = "okay";
             bindings = <
-                &trans  &trans  &trans  &trans  &kp PSCRN  &kp 17235996  &bt BT_NXT  &bt BT_PRV  &bt BT_CLR  &bt BT_CLR_ALL  &kp 17235972  &kp 17235990
-                &kp 17235974  &kp 17235993  &kp END  &trans  &mkp LCLK  &kp UP  &mkp RCLK  &trans  &kp 17235997  &kp 17235995  &kp 17235997  &kp 17235996
-                &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &kp DEL
-                &kp TAB  &trans  &trans  &trans  &trans  &trans  &trans  &studio_unlock  &hires_dial_radial_controller_button  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)\n                &hires_dial_radial_controller_button\n#endif
+&trans  &trans   &trans   &trans        &trans        &trans                      &trans            &trans     &trans         &trans     &trans      &trans
+&trans  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                      &kp HOME          &kp PG_UP  &kp PAGE_DOWN  &kp END    &kp ESCAPE  &trans
+&trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
+&trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
+&trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
+#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
+&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+&hires_dial_radial_controller_button
+#endif
             >;
         };
-        };
+    };
+};
+
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 &{/keymap/layer_0} {
     sensor-bindings = <&hires_dial_scroll 20 1>;
