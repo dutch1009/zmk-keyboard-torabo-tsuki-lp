@@ -6,9 +6,34 @@
 
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 #include <behaviors/hires_dial.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
 #endif
 
 / {
+#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+    behaviors {
+        /*
+         * Runtime Sensor Rotate defaults:
+         * Positive rotation keeps the existing layer 0/1 scroll direction.
+         */
+        rsr_scroll: rsr_scroll {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&msc SCRL_DOWN>;
+            ccw-binding = <&msc SCRL_UP>;
+        };
+
+        rsr_volume: rsr_volume {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&kp C_VOL_UP>;
+            ccw-binding = <&kp C_VOL_DN>;
+        };
+    };
+#endif
+
     runtime_combo_defaults {
         compatible = "cormoran,runtime-combo-defaults";
 
@@ -106,19 +131,19 @@
 
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 &{/keymap/layer_0} {
-    sensor-bindings = <&hires_dial_scroll 20 1>;
+    sensor-bindings = <&rsr_scroll>;
 };
 
 &{/keymap/layer_1} {
-    sensor-bindings = <&hires_dial_scroll 1 1>;
+    sensor-bindings = <&rsr_scroll>;
 };
 
 &{/keymap/layer_2} {
-    sensor-bindings = <&hires_dial_encoder C_VOL_UP C_VOL_DN>;
+    sensor-bindings = <&rsr_volume>;
 };
 
 &{/keymap/layer_3} {
-    /* Quarter-speed Radial Controller motion: output/input = 1/4. */
+    /* Preserve the dedicated Radial Controller behavior. */
     sensor-bindings = <&hires_dial_radial_controller 4 1>;
 };
 #endif
