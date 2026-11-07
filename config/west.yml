@@ -6,8 +6,6 @@ manifest:
       url-base: https://github.com/cormoran
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
-      # No HIRES dial or runtime sensor-rotate dependency: DYA Studio runtime
-      # features are prioritized over the optional rotary dial.
     - name: dutch1009
       url-base: https://github.com/dutch1009
   projects:
@@ -30,6 +28,9 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: main
+    - name: zmk-driver-hires-dial
+      remote: dutch1009
+      revision: cb21e5ef6cd121e6fe3a6300ea3be280ca775a84
     - name: zmk-component-bmp-boost
       remote: sekigon-gonnoc
       import: west.yml
