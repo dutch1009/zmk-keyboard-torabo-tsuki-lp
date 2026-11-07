@@ -20,6 +20,10 @@ manifest:
       remote: cormoran
       revision: main
       import: true
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: codex/custom-rpc-rewrite
+      import: true
     - name: zmk-module-ble-management
       remote: cormoran
       revision: 57738cc4fc6ba80e82a7ac57741a0339cb186cd4
