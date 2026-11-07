@@ -3,10 +3,17 @@
 
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors/runtime-input-processor.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&mouse_runtime_input_processor {
+    /* Preserve the current physical trackball direction. */
+    x-invert;
+    y-invert;
+};
 
 &pointing_listener {
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    input-processors = <&mouse_runtime_input_processor>;
 };
 
 &size_s_transform {
