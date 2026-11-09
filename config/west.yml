@@ -15,8 +15,8 @@ manifest:
       import:
         file: app/west.yml
     - name: zmk-feature-runtime-combo
-      remote: cormoran
-      revision: main
+      remote: dutch1009
+      revision: fix/runtime-combo-rpc-notification-suppression
       import: true
     - name: zmk-feature-default-layer
       remote: cormoran
