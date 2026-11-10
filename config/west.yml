@@ -16,7 +16,7 @@ manifest:
         file: app/west.yml
     - name: zmk-feature-runtime-combo
       remote: dutch1009
-      revision: fix/runtime-combo-save-arrays-once
+      revision: fix/preserve-unresolved-behavior-on-edit-delete
       import: true
     - name: zmk-feature-default-layer
       remote: cormoran
