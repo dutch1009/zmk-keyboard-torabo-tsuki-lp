@@ -15,8 +15,8 @@ manifest:
       import:
         file: app/west.yml
     - name: zmk-feature-runtime-combo
-      remote: dutch1009
-      revision: fix/preserve-unresolved-behavior-on-edit-delete
+      remote: cormoran
+      revision: main
       import: true
     - name: zmk-feature-default-layer
       remote: cormoran
